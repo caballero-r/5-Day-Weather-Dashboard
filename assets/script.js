@@ -10,9 +10,8 @@ var searchButtonEl = document.getElementById('search-button')
 var currentDayEl = document.querySelector('.current-day')
 var currentCityEl = document.getElementById('current-city')
 
-// This displays the Current Date and Day
 
-
+// Initiates all calls to API
 searchButtonEl.addEventListener("click", getCurrentWeather)
 
 // Gets the 5 day forecast 
