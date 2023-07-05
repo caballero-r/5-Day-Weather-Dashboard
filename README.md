@@ -1,4 +1,4 @@
-# 5-Day-Weather-Dashboard
+#Day-Weather-Dashboard
 
 ## Description
 This project was created without a starter code. This project takes in a user input for a city they would like to know the weather about. Then user is presented with the current weather in that city and what the next 5 days will look. 
