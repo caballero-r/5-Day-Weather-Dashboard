@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>5 Day Weather Dashboard</title>
+
+		<!-- Bootstrap CSS CDN -->
+		<!-- Font Awesome -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- MDB -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/style.css" />
+	</head>
+
+	<body class="container-fluid">
+		<header class="row text-center bg-info text-white">
+			<h1>Weather Dashboard</h1>
+		</header>
+
+		<section class="row">
+			<!-- Search Section -->
+			<div class="col-md-3 justify-content-start align-items-start">
+				<h3 class="mb-4 pt-2 fw-normal">Search for a City:</h3>
+				<div class="input-group rounded mb-3">
+					<input
+						id="search-input"
+						type="search"
+						class="form-control rounded"
+						placeholder="City"
+						aria-label="Search"
+						aria-describedby="search-addon"
+					/>
+					<a href="#!" type="button" id="search-button">
+						<span
+							class="bg-info input-group-text border-0 fw-bold"
+							id="search-addon"
+						>
+							Search
+						</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- Previous Searches are stored. -->
+			<div class="list-group" id="cities"></div>
+
+			<!-- Current Weather and Forecast Section-->
+			<div class="col p-4 hide" id="weather-section">
+				<div class="card shadow-5 border">
+					<div class="card-body">
+						<h4 class="mb-1 sfw-normal current-day" id="current-city"></h4>
+						<p class="mb-2">
+							Current temperature: <strong class="temp-main"></strong>
+							<img src="" id="current-icon">
+						</p>
+						<p>Wind: <strong class="wind-main"></strong></p>
+						<p>Humidity: <strong class="humidity-main"></strong></p>
+					</div>
+				</div>
+
+				<h3>5 Day Forecast:</h3>
+				<div class="row p-3">
+					<div class="card shadow-3 border col">
+						<h4 class="mb-1 sfw-normal" id="date-one"></h4>
+						<p class="mb-2">Temp: <strong class="temp-one"></strong>
+							<img src="" id="icon-one">
+						</p>
+						<p>Wind: <strong class="wind-one"></strong></p>
+						<p>Humidity: <strong class="humidity-one"></strong></p>
+					</div>
+					<div class="card shadow-3 border col">
+						<h4 class="mb-1 sfw-normal" id="date-two"></h4>
+						<p class="mb-2">Temp: <strong class="temp-two"></strong>
+							<img src="" id="icon-two">
+						</p>
+						<p>Wind: <strong class="wind-two"></strong></p>
+						<p>Humidity: <strong class="humidity-two"></strong></p>
+					</div>
+					<div class="card shadow-3 border col">
+						<h4 class="mb-1 sfw-normal" id="date-three"></h4>
+						<p class="mb-2">Temp: <strong class="temp-three"></strong>
+							<img src="" id="icon-three">
+						</p>
+						<p>Wind: <strong class="wind-three"></strong></p>
+						<p>Humidity: <strong class="humidity-three"></strong></p>
+					</div>
+					<div class="card shadow-3 border col">
+						<h4 class="mb-1 sfw-normal" id="date-four"></h4>
+						<p class="mb-2">Temp: <strong class="temp-four"></strong>
+							<img src="" id="icon-four">
+						</p>
+						<p>Wind: <strong class="wind-four"></strong></p>
+						<p>Humidity: <strong class="humidity-four"></strong></p>
+					</div>
+					<div class="card shadow-3 border col">
+						<h4 class="mb-1 sfw-normal" id="date-five"></h4>
+						<p class="mb-2">Temp: <strong class="temp-five"></strong>
+							<img src="" id="icon-five">
+						</p>
+						<p>Wind: <strong class="wind-five"></strong></p>
+						<p>Humidity: <strong class="humidity-five"></strong></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Bootstrap JavaScript CDN -->
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+			integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+			crossorigin="anonymous"
+		></script>
+		<script src="assets/script.js"></script>
+	</body>
+</html>
