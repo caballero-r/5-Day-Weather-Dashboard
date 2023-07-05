@@ -13,28 +13,26 @@ var currentCityEl = document.getElementById('current-city')
 // This displays the Current Date and Day
 
 
-searchButtonEl.addEventListener("click", getGeo)
+searchButtonEl.addEventListener("click", getCurrentWeather)
 
 function getGeo() {
-	var cityUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${searchEl.value}&appid=316be47ca42cc673b9c021bb126c8319`
-	weatherCardsEl.classList.remove('hide')
+	var cityUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchEl.value}&appid=${apiKey}`
+
 	
 	fetch(cityUrl)
 		.then(function (response) {
 			return response.json()
 		})
 		.then(function (data) {
-			lat = data[0].lat
-			lon = data[0].lon
 			getWeatherFiveDay()
 			getCurrentWeather()
-			searchHistory(searchEl.value)
+
 		})
 }
 
 // Gets the 5 day forecast 
 function getWeatherFiveDay() {
-	var url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=316be47ca42cc673b9c021bb126c8319&units=metric`
+	var url = `https://api.openweathermap.org/data/2.5/forecast?q=${searchEl.value}&type=like&sort=population&units=metric&appid=${apiKey}`
 	
 	fetch(url)
 		.then(function (response) {
@@ -129,6 +127,7 @@ function getWeatherFiveDay() {
 // Gets the current weather
 function getCurrentWeather() {
 	var url = `https://api.openweathermap.org/data/2.5/weather?q=${searchEl.value}&type=like&sort=population&units=metric&appid=${apiKey}`;
+	weatherCardsEl.classList.remove('hide')
 
 	fetch(url)
 		.then( function (response) {
@@ -146,6 +145,8 @@ function getCurrentWeather() {
 			currentTemp.innerHTML = data.main.temp + "°C," + " " + data.weather[0].description;
 			currentWind.innerHTML = data.wind.speed + "m/s";
 			currentHumidity.innerHTML = data.main.humidity + "%";
+			getWeatherFiveDay()
+			searchHistory(searchEl.value)
 		})
 }
 
