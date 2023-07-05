@@ -15,21 +15,6 @@ var currentCityEl = document.getElementById('current-city')
 
 searchButtonEl.addEventListener("click", getCurrentWeather)
 
-function getGeo() {
-	var cityUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchEl.value}&appid=${apiKey}`
-
-	
-	fetch(cityUrl)
-		.then(function (response) {
-			return response.json()
-		})
-		.then(function (data) {
-			getWeatherFiveDay()
-			getCurrentWeather()
-
-		})
-}
-
 // Gets the 5 day forecast 
 function getWeatherFiveDay() {
 	var url = `https://api.openweathermap.org/data/2.5/forecast?q=${searchEl.value}&type=like&sort=population&units=metric&appid=${apiKey}`
